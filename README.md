@@ -17,7 +17,7 @@ A simple expense tracker built using HTML, CSS and JavaScript.
 
 
 ## How to Run
-
+Use the link below
 [Live demo](https://expense-tracker-aswin-a.vercel.app/)
 
 
