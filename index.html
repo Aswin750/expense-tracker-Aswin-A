@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+    <div>
+        <h1>Expense Tracker</h1>
+        <p>Track your income and expenses easily</p>
+    </div>
+</header>
+
+<main class="container">
+
+<section class="summary">
+<div class="card income-card">
+    <p>Total Income</p>
+    <h2 id="incomeTotal">₹0.00</h2>
+</div>
+
+<div class="card expense-card">
+    <p>Total Expenses</p>
+    <h2 id="expenseTotal">₹0.00</h2>
+</div>
+
+<div class="card balance-card">
+    <p>Current Balance</p>
+    <h2 id="balanceTotal">₹0.00</h2>
+</div>
+</section>
+
+<section class="form-section">
+<h2 id="formTitle">Add Transaction</h2>
+<form id="transactionForm">
+    <div class="form-group">
+        <label for="type">Type</label>
+        <select id="type" required>
+            <option value="expense">Expense</option>
+            <option value="income">Income</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="amount">Amount</label>
+        <input
+            type="number"
+            id="amount"
+            placeholder="Enter amount"
+            min="0.01"
+            step="0.01"
+            required
+        >
+    </div>
+
+    <div class="form-group">
+    <label for="category">Category</label>
+        <select id="category" required>
+            <option value="">Select category</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Bills">Bills</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Salary">Salary</option>
+            <option value="Freelance">Freelance</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" required>
+    </div>
+
+    <div class="form-group full-width">
+        <label for="description">Description</label>
+        <input
+            type="text"
+            id="description"
+            placeholder="Example: Lunch with friends"
+        >
+    </div>
+
+                
+    <button type="submit" id="submitButton" class="primary-button">
+    Add Transaction
+    </button>
+    <button type="button" id="cancelButton" class="secondary-button hidden">
+    Cancel Edit
+    </button>
+    <p id="errorMessage" class="error-message"></p>
+</form>
+</section>
+
+<section class="filter-section">
+<h2>Transactions</h2>
+
+    <div class="filters">
+        <div class="form-group">
+        <label for="typeFilter">Filter by Type</label>
+            <select id="typeFilter">
+                <option value="all">All</option>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+        <label for="categoryFilter">Filter by Category</label>
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Bills">Bills</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Salary">Salary</option>
+                <option value="Freelance">Freelance</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <button id="clearFilterButton" class="secondary-button filter-button">
+        Clear Filters
+        </button>
+    </div>
+</section>
+
+<section class="transactions-section">
+    <div id="transactionList" class="transaction-list"></div>
+</section>
+
+<section class="bonus-section">
+    <div class="bonus-header">
+        <div>
+            <h2>Monthly Summary</h2>
+            <p>See income, expenses and balance for a selected month.</p>
+        </div>
+        <input type="month" id="monthPicker">
+    </div>
+
+    <div class="monthly-summary">
+        <div>
+            <span>Monthly Income</span>
+            <strong id="monthIncome">₹0.00</strong>
+        </div>
+
+        <div>
+            <span>Monthly Expenses</span>
+            <strong id="monthExpense">₹0.00</strong>
+        </div>
+
+        <div>
+            <span>Monthly Balance</span>
+            <strong id="monthBalance">₹0.00</strong>
+        </div>
+    </div>
+</section>
+
+<section class="bonus-section">
+    <h2>Expense by Category</h2>
+    <p>Shows how your expenses are divided between categories.</p>
+
+    <div class="chart-box">
+        <canvas id="expenseChart"></canvas>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <p>Expense Tracker </p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/app.js"></script>
+</body>
+</html>
