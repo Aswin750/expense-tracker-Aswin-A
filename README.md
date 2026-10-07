@@ -18,12 +18,8 @@ A simple expense tracker built using HTML, CSS and JavaScript.
 
 ## How to Run
 
-Open `index.html` in a browser.
+[Live demo](https://expense-tracker-aswin-a.vercel.app/)
 
-The project can work without a local server, but using VS Code Live Server is recommended while developing.
 
-## Important
-
-The category chart uses Chart.js from a CDN, so the chart needs an internet connection when the page loads.
 
 
